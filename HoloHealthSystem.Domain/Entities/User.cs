@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace HoloHealthSystem.Domain.Entities
 {
-    public abstract class Usuario : Notifiable<Notification>
+    public abstract class User
     {
-        public Usuario(string email, Name name,DateTime birth,CPF cpf)
+        public User(Email email, Name name,DateTime birth,CPF cpf)
         {
             Email = email;
             Name = name;
@@ -19,11 +19,10 @@ namespace HoloHealthSystem.Domain.Entities
             Phones = new List<Phone>();
             CPFCode = cpf;
 
-            AddNotifications(new Contract<bool>()
-                .IsEmail(Email, "Email inválido."));
+            
         }
         public CPF CPFCode { get; private set; }
-        public string Email { get; private set; }
+        public Email Email { get; private set; }
 
         public Name Name { get; private set; }
         public IList<Phone> Phones { get; private set; }
