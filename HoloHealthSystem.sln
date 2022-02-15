@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoloHealthSystem.Api", "HoloHealthSystem.Api\HoloHealthSystem.Api.csproj", "{57B2872A-9AB5-4F9A-A50B-DC4089BF1E89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoloHealthSystem.Domain", "HoloHealthSystem.Domain\HoloHealthSystem.Domain.csproj", "{F351DE97-FD78-4027-87E4-3757F3DFB8F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoloHealthSystem.Domain.Infra", "HoloHealthSystem.Domain.Infra\HoloHealthSystem.Domain.Infra.csproj", "{8DED0A9F-11C1-4D4A-864A-1DA89318FD20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoloHealthSystem.Domain.Tests", "HoloHealthSystem.Domain.Tests\HoloHealthSystem.Domain.Tests.csproj", "{4EA1EE48-5683-42BA-9D83-E1B186AE5A36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57B2872A-9AB5-4F9A-A50B-DC4089BF1E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57B2872A-9AB5-4F9A-A50B-DC4089BF1E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57B2872A-9AB5-4F9A-A50B-DC4089BF1E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57B2872A-9AB5-4F9A-A50B-DC4089BF1E89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F351DE97-FD78-4027-87E4-3757F3DFB8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F351DE97-FD78-4027-87E4-3757F3DFB8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F351DE97-FD78-4027-87E4-3757F3DFB8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F351DE97-FD78-4027-87E4-3757F3DFB8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DED0A9F-11C1-4D4A-864A-1DA89318FD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DED0A9F-11C1-4D4A-864A-1DA89318FD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DED0A9F-11C1-4D4A-864A-1DA89318FD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DED0A9F-11C1-4D4A-864A-1DA89318FD20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA1EE48-5683-42BA-9D83-E1B186AE5A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA1EE48-5683-42BA-9D83-E1B186AE5A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA1EE48-5683-42BA-9D83-E1B186AE5A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA1EE48-5683-42BA-9D83-E1B186AE5A36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
