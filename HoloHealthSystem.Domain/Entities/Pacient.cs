@@ -11,7 +11,8 @@ namespace HoloHealthSystem.Domain.Entities
     {
         public Pacient(Email email, Name name, DateTime birth, CPF cpf) : base(email, name, birth, cpf)
         {
+            Apoints= new List<Apointment>();
         }
-        
+        public IList<Apointment> Apoints { get; private set; }
     }
 }
