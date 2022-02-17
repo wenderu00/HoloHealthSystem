@@ -12,6 +12,7 @@ namespace HoloHealthSystem.Domain.Entities
         private IList<Phone> _phones;
         private IList<Room> _rooms;
         private IList<Manager> _managers;
+        private IList<Doctor> _doctors;
         public Clinic(string name)
         {
             Name = name;
@@ -25,6 +26,7 @@ namespace HoloHealthSystem.Domain.Entities
         public IReadOnlyCollection<Phone> Phones { get { return _phones.ToArray(); } }
         public IReadOnlyCollection<Room> Rooms { get { return _rooms.ToArray(); } }
         public IReadOnlyCollection<Manager> Managers { get { return _managers.ToArray(); } }
+        public IList<Doctor> Doctors { get { return _doctors.ToArray();} }
 
         public void AddAddress(Address address)
         {
@@ -63,11 +65,19 @@ namespace HoloHealthSystem.Domain.Entities
         }
         public void AddManager(Manager manager)
         {
-            _managers.Add(manager);
+            if(!_managers.Contains(manager)) _managers.Add(manager);
         }
         public void RemoveManager(Manager manager)
         {
             _managers.Remove(manager);
+        }
+        public void AddDoctor(Doctor doctor)
+        {
+            if (!_doctors.Contains(doctor)) _doctors.Add(doctor);
+        }
+        public void RemoveDoctor(Doctor doctor)
+        {
+            _doctors.Remove(doctor);
         }
     }
 }
