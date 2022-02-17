@@ -18,6 +18,10 @@ namespace HoloHealthSystem.Domain.Entities
         
         public void UpdateNumber(string number)
         {
+            if (!Clinic.HasRoomNumber(number))
+            {
+                Number=number;
+            }
         }
     }
 }

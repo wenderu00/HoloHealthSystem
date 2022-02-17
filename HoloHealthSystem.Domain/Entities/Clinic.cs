@@ -53,11 +53,11 @@ namespace HoloHealthSystem.Domain.Entities
                 _rooms.Add(room);
             }
         }
-        public bool HasRoomNumber(Room room)
+        public bool HasRoomNumber(string number)
         {
-            foreach (var rom in _rooms)
+            foreach (var room in _rooms)
             {
-                if (rom.Number == room.Number) return true;
+                if (room.Number == number) return true;
             }
             return false;
         }
