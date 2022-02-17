@@ -14,6 +14,7 @@ namespace HoloHealthSystem.Domain.Entities
             Name = name;
             Phones = new List<Phone>();
             Rooms = new List<Room>();
+            Managers = new List<Manager>();
 
         }
         public string Name { get; private set; }
@@ -38,6 +39,10 @@ namespace HoloHealthSystem.Domain.Entities
             {
                 Rooms.Add(room);
             }
+        }
+        public void AddManager(Manager manager)
+        {
+            Managers.Add(manager);
         }
     }
 }

@@ -8,21 +8,21 @@ namespace HoloHealthSystem.Domain.Entities
 {
     public class City:Entity
     {
-        private IList<Address> Addresses;
+        private IList<Address> _addresses;
         public City(State state,string name)
         {
             State = state;
             Name = name;
-            Addresses = new List<Address>();
+            _addresses = new List<Address>();
         }
         public string Name { get; private set; }
         public State State { get; private set; }
-        
+        public IReadOnlyCollection<Address> Addresss { get { return _addresses.ToArray(); } }
         public void AddAddress(Address address)
         {
-            if (!Addresses.Contains(address))
+            if (!_addresses.Contains(address))
             {
-                Addresses.Add(address);
+                _addresses.Add(address);
             }
         }
     }
