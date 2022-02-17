@@ -30,5 +30,17 @@ namespace HoloHealthSystem.Domain.Entities
             bool ReservationBetween = Begin > reservation.Begin && Begin < reservation.End;
             return BeginBetween || EndBetween || ReservationBetween;
         }
+        public bool ValidApointment(Apointment apoint)
+        {
+            return apoint.Time >Begin && apoint.Time <End;
+        }
+        public bool HasConflictApointment(Apointment apoint)
+        {
+            foreach(var x in Apoints)
+            {
+                if(x.HasConclictTime(apoint)) return true;
+            }
+            return false;
+        }
     }
 }

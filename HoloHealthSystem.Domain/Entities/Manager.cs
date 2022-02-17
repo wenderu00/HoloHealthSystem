@@ -17,6 +17,9 @@ namespace HoloHealthSystem.Domain.Entities
 
         public void ChangeClinic(Clinic clinic)
         {
+            if(Clinic.Managers.Count > 1) {
+                Clinic = clinic;
+            }
         }
     }
 
