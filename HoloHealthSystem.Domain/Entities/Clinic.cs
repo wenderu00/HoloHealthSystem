@@ -45,6 +45,14 @@ namespace HoloHealthSystem.Domain.Entities
         {
             _phones.Remove(phone);
         }
+        public bool HasPhone(Phone phone)
+        {
+            foreach(var pho in _phones)
+            {
+                if (pho.Number == phone.Number) return true;
+            }
+            return false;
+        }
         public void AddRoom(Room room)
         {
             if (!_rooms.Contains(room))
