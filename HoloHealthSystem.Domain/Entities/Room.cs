@@ -13,6 +13,7 @@ namespace HoloHealthSystem.Domain.Entities
         {
             Number = number;
             Clinic = clinic;
+            _reservations = new List<Reservation>();
         }
         public string Number { get; private set; }
         public Clinic Clinic { get; private set; }
@@ -44,5 +45,6 @@ namespace HoloHealthSystem.Domain.Entities
                 _reservations.Add(reservation);
             };
         }
+        
     }
 }

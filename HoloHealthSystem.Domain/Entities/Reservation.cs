@@ -22,5 +22,13 @@ namespace HoloHealthSystem.Domain.Entities
         public DateTime End { get; private set; }
         
         public IList<Apointment> Apoints { get; private set; }
+
+        public bool HasConflictTime(Reservation reservation)
+        {
+            bool BeginBetween = reservation.Begin > Begin && reservation.Begin < End;
+            bool EndBetween = reservation.End > Begin && reservation.End < End;
+            bool ReservationBetween = Begin > reservation.Begin && Begin < reservation.End;
+            return BeginBetween || EndBetween || ReservationBetween;
+        }
     }
 }

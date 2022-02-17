@@ -19,6 +19,7 @@ namespace HoloHealthSystem.Domain.Entities
             _phones = new List<Phone>();
             _rooms = new List<Room>();
             _managers = new List<Manager>();
+            _doctors = new List<Doctor>();
 
         }
         public string Name { get; private set; }
