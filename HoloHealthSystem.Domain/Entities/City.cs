@@ -8,6 +8,7 @@ namespace HoloHealthSystem.Domain.Entities
 {
     public class City:Entity
     {
+        private IList<Address> Addresses;
         public City(State state,string name)
         {
             State = state;
@@ -16,7 +17,7 @@ namespace HoloHealthSystem.Domain.Entities
         }
         public string Name { get; private set; }
         public State State { get; private set; }
-        public IList<Address> Addresses { get; private set; }
+        
         public void AddAddress(Address address)
         {
             if (!Addresses.Contains(address))
