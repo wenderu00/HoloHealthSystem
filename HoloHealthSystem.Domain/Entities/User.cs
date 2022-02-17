@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HoloHealthSystem.Domain.Entities
 {
-    public abstract class User
+    public abstract class User : Notifiable<Notification>
     {
         public User(Email email, Name name,DateTime birth,CPF cpf)
         {
@@ -18,7 +18,7 @@ namespace HoloHealthSystem.Domain.Entities
             Birth = birth;
             Phones = new List<Phone>();
             CPFCode = cpf;
-
+            AddNotifications(Email, CPFCode);
             
         }
         public CPF CPFCode { get; private set; }
