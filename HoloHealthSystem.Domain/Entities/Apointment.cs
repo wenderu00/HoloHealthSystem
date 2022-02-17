@@ -23,6 +23,9 @@ namespace HoloHealthSystem.Domain.Entities
         {
             return apoint.Time.Hour == Time.Hour && apoint.Time.Minute == Time.Minute;
         }
-        
+        public void MarkAsDone()
+        {
+            Done = true;
+        }
     }
 }
