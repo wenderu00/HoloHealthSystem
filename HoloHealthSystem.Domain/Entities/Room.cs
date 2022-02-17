@@ -15,5 +15,9 @@ namespace HoloHealthSystem.Domain.Entities
         }
         public string Number { get; private set; }
         public Clinic Clinic { get; private set; }
+        
+        public void UpdateNumber(string number)
+        {
+        }
     }
 }
