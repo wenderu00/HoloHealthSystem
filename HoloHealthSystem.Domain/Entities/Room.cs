@@ -40,7 +40,7 @@ namespace HoloHealthSystem.Domain.Entities
         }
         public void AddReservation(Reservation reservation)
         {
-            if (!HasConflictReservation(reservation))
+            if (!HasConflictReservation(reservation)&&_reservations.Contains(reservation))
             {
                 _reservations.Add(reservation);
             };

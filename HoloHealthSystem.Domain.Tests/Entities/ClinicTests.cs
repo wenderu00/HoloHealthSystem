@@ -92,6 +92,21 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
+        public void Dado_um_numero_de_sala_existente_retorna_true()
+        {
+            _clinic.AddRoom(_room);
+            var result= _clinic.HasRoomNumber(_room.Number);
+            Assert.AreEqual(true, result);
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_um_numero_de_sala_inexistente_retorna_false()
+        {
+            var result = _clinic.HasRoomNumber(_room.Number);
+            Assert.AreEqual(false, result);
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
         public void Dado_uma_sala_repetida_nao_adiciona()
         {
             
