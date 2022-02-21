@@ -12,68 +12,68 @@ namespace HoloHealthSystem.Domain.Tests.Entities
     {
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_sem_conflito_de_horario_retorna_false()
+        public void Should_return_false_for_a_reservation_without_time_conflict()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_com_conflito_de_horario_retorna_true()
+        public void Should_return_true_for_a_reservation_with_time_conflict()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_clinica_repetida_nao_adiciona()
+        public void Should_not_add_a_registered_clinic()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_clinica_diferente_adiciona()
+        public void Should_add_an_unregistered_clinic()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_clinica_inclusa_remove()
+        public void Should_remove_a_registered_clinic()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_clinica_nao_inclusa_nao_remove()
+        public void Should_not_remove_an_unregistered_clinic()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_repetida_nao_adiciona()
+        public void Should_not_add_a_repeated_reservation()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_com_conflito_nao_adiciona()
+        public void Should_not_add_a_reservation_that_has_any_conflict()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_diferente_e_sem_conflito_adiciona()
+        public void Should_add_a_new_reservation_that_do_not_has_any_conflicts()
         {
             Assert.Fail();
         }
 
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_inclusa_remove()
+        public void Should_remove_a_registered_reservation()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_nao_inclusa_nao_remove()
+        public void Should_not_remove_an_unregistered_reservation()
         {
             Assert.Fail();
         }

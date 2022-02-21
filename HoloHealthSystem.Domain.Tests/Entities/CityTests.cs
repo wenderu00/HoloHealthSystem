@@ -25,7 +25,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_endereco_diferente_adiciona()
+        public void Should_add_an_unregistered_address()
         {
             var count = _city.Addresss.Count;
             _city.AddAddress(_address);
@@ -33,7 +33,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_endereco_igual_nao_adiciona()
+        public void Should_not_add_a_registered_address()
         {
             
             _city.AddAddress(_address);

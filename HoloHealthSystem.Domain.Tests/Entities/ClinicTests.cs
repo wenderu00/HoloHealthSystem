@@ -40,14 +40,15 @@ namespace HoloHealthSystem.Domain.Tests.Entities
 
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_endereco_relacionado_adiciona_endereco()
+        public void Should_add_a_address_when_a_related_address_is_given()
+            _
         {
             _clinic.AddAddress(_address);
             Assert.AreEqual(_address, _clinic.Address);
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_endereco_nao_relacionado_nao_adiciona_endereco()
+        public void Should_not_add_a_address_when_a_not_related_address_is_given()
         {
             _clinic.AddAddress(_address2);
             Assert.AreEqual(null, _clinic.Address);
@@ -55,7 +56,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_numero_invalido_nao_adiciona_o_numero()
+        public void Should_not_add_a_phone-number_when_a_invalid_phone-number_is_given()
         {
             var count = _clinic.Phones.Count;
             _clinic.AddPhone(_invalidPhone);
@@ -64,7 +65,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_numero_repetido_nao_adiciona_o_numero()
+        public void Should_not_add_an_existing_phone-number()
         {
             _clinic.AddPhone(_validPhone);
             var count = _clinic.Phones.Count;
@@ -73,7 +74,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_numero_diferente_e_valido_adiciona_o_numero()
+        public void Should_add_a_valid_phone-number()
         {
             var count = _clinic.Phones.Count;
             _clinic.AddPhone(_validPhone);
@@ -82,7 +83,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
 
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_numero_incluso_remove_o_numero()
+        public void Should_remove_a_registered_phone-number()
         {
             
             _clinic.AddPhone(_validPhone);
@@ -92,14 +93,14 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_numero_nao_incluso_nao_remove_o_numero()
+        public void Should_not_remove_an_unregistered_phone-number()
         {
 
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_numero_de_sala_existente_retorna_true()
+        public void Should_return_true_for_an_existing_room_number()
         {
             _clinic.AddRoom(_room);
             var result= _clinic.HasRoomNumber(_room.Number);
@@ -107,14 +108,14 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_numero_de_sala_inexistente_retorna_false()
+        public void Should_return_false_for_a_non_existing_room_number()
         {
             var result = _clinic.HasRoomNumber(_room.Number);
             Assert.AreEqual(false, result);
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_sala_repetida_nao_adiciona()
+        public void Should_not_add_a_registered_room()
         {
             
             _clinic.AddRoom(_room);
@@ -124,14 +125,14 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_sala_com_conflito_de_numero_nao_adiciona()
+        public void Should_not_add_a_room_with_a_registered_number()
         {
 
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_sala_diferente_e_numero_sem_conflito_adiciona()
+        public void Should_add_a_new_room_that_has_no_number_conflicts()
         {
             var count = _clinic.Rooms.Count;
             _clinic.AddRoom(_room);
@@ -139,7 +140,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_gerente_repetido_nao_adiciona()
+        public void Should_not_add_a_registered_manager()
         {
             
             _clinic.AddManager(_manager);
@@ -149,19 +150,19 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_gerente_incluso_remove()
+        public void Should_remove_a_registered_manager()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_gerente_nao_incluso_nao_remove()
+        public void Should_not_remove_a_unregistered_manager()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_gerente_diferente_adiciona()
+        public void Should_add_an_unregistered_manager()
         {
             var count = _clinic.Managers.Count;
             _clinic.AddManager(_manager);
@@ -169,7 +170,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_medico_repetido_nao_adiciona()
+        public void Should_not_add_a_registered_doctor()
         {
             _clinic.AddDoctor(_doctor);
             var count = _clinic.Doctors.Count;
@@ -178,7 +179,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_medico_diferente_adiciona()
+        public void Should_add_an_unregistered_doctor()
         {
             var count = _clinic.Doctors.Count;
             _clinic.AddDoctor(_doctor);
@@ -186,13 +187,13 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_medico_incluso_remove()
+        public void Should_remove_a_registered_doctor()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_medico_nao_incluso_nao_remove()
+        public void Should_not_remove_a_unregistered_doctor()
         {
             Assert.Fail();
         }

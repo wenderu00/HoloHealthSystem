@@ -23,7 +23,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
 
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_cidade_nova_adiciona()
+        public void Should_add_a_new_city()
         {
             var count = _state.Cities.Count;
             _state.AddCity(_city);
@@ -32,7 +32,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
 
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_cidade_repetida_nao_adiciona()
+        public void Should_not_add_a_registered_city()
         {
             _state.AddCity(_city);
             var count = _state.Cities.Count;

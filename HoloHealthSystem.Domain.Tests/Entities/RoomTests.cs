@@ -12,25 +12,25 @@ namespace HoloHealthSystem.Domain.Tests.Entities
     {
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_novo_numero_sem_conflito_muda_numero()
+        public void Should_modify_the_room_number_for_a_new_number_that_causes_no_conflict()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_novo_numero_com_conflito_nao_muda_numero()
+        public void Should_not_modify_the_room_number_for_a_new_number_that_causes_conflict()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_sem_conflito_de_horario_retorna_false()
+        public void Should_return_false_for_a_reservation_without_conflict()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_com_conflito_de_horario_retorna_true()
+        public void Should_return_true_for_a_reservation_with_time_conflict()
         {
             Assert.Fail();
         }
@@ -42,21 +42,21 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_repetida_nao_adiciona()
+        public void Should_not_add_a_repeated_reservation()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_nova_e_sem_conflito_de_horario_adiciona()
+        public void Should_add_a_new_reservation_without_any_time_conflict()
         {
             Assert.Fail();
         }
-        public void Dado_uma_reserva_inclusa_remove()
+        public void Should_remove_an_existing_reservation()
         {
             Assert.Fail();
         }
-        public void Dado_uma_reserva_nao_inclusa_nao_remove()
+        public void Should_not_remove_a_non_existing_reservation()
         {
             Assert.Fail();
         }
