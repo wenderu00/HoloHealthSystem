@@ -22,7 +22,7 @@ namespace HoloHealthSystem.Domain.Entities
         public DateTime Begin { get; private set; }
         public DateTime End { get; private set; }
         
-
+        public IReadOnlyCollection<Apointment> Apoints { get { return _apoints.ToArray(); } }
         public bool BeginBetween(Reservation reservation)
         {
             return reservation.Begin > Begin && reservation.Begin < End;
@@ -53,10 +53,14 @@ namespace HoloHealthSystem.Domain.Entities
         }
         public void AddApointment(Apointment apoint)
         {
-            if (ValidApointment(apoint) && _apoints.Contains(apoint) && !HasConflictApointment(apoint))
+            if (ValidApointment(apoint) && !_apoints.Contains(apoint) && !HasConflictApointment(apoint))
             {
                 _apoints.Add(apoint);
             }
+        }
+        public void Remove(Apointment apoint)
+        {
+            _apoints.Remove(apoint);
         }
     }
 }

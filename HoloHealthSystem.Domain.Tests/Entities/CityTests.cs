@@ -21,7 +21,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
             _state = new State("Pernambuco");
             _city = new City(_state, "Recife");
             _clinic = new Clinic("Rua da hora");
-            _address = new Address("pina", "rua da hora", "202", _clinic);
+            _address = new Address("pina", "rua da hora", "202",_city, _clinic);
         }
         [TestMethod]
         [TestCategory("Entities")]

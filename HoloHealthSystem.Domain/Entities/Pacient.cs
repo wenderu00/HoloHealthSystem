@@ -14,6 +14,7 @@ namespace HoloHealthSystem.Domain.Entities
         {
             _apoints= new List<Apointment>();
         }
+        public IReadOnlyCollection<Apointment> Apointments { get { return _apoints.ToArray(); } }
         public bool HasConflictApointment(Apointment apoint)
         {
             foreach (var x in _apoints)
@@ -24,7 +25,14 @@ namespace HoloHealthSystem.Domain.Entities
         }
         public void AddApointment(Apointment apoint)
         {
-           
+            if (!_apoints.Contains(apoint) && !HasConflictApointment(apoint))
+            {
+                _apoints.Add(apoint);
+            }
+        }
+        public void RemoveApointment(Apointment apoint)
+        {
+            _apoints.Remove(apoint);
         }
     }
 }
