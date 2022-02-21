@@ -51,7 +51,7 @@ namespace HoloHealthSystem.Domain.Entities
         
         public void AddRoom(Room room)
         {
-            if (!_rooms.Contains(room))
+            if (!_rooms.Contains(room) && !HasRoomNumber(room.Number))
             {
                 _rooms.Add(room);
             }

@@ -8,55 +8,54 @@ using System.Threading.Tasks;
 namespace HoloHealthSystem.Domain.Tests.Entities
 {
     [TestClass]
-    public class RoomTests
+    public class ReservationTests
     {
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_novo_numero_sem_conflito_muda_numero()
+        public void Dado_uma_reserva_com_inicio_entre_inicio_e_fim_retorna_true()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_novo_numero_com_conflito_nao_muda_numero()
+        public void Dado_uma_reserva_sem_inicio_entre_inicio_e_fim_retorna_false()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_sem_conflito_de_horario_retorna_false()
+        public void Dado_uma_reserva_com_fim_entre_inicio_e_fim_retorna_true()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_com_conflito_de_horario_retorna_true()
+        public void Dado_uma_reserva_sem_fim_entre_inicio_e_fim_retorna_false()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_com_conflito_de_horario_nao_adiciona()
+        public void Dado_uma_reserva_entre_inicio_e_fim_retorna_true()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_repetida_nao_adiciona()
+        public void Dado_uma_reserva_fora_do_inicio_e_fim_retorna_false()
+        {
+            Assert.Fail();
+        }
+        
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_uma_reserva_com_conflito_retorna_true()
         {
             Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_nova_e_sem_conflito_de_horario_adiciona()
-        {
-            Assert.Fail();
-        }
-        public void Dado_uma_reserva_inclusa_remove()
-        {
-            Assert.Fail();
-        }
-        public void Dado_uma_reserva_nao_inclusa_nao_remove()
+        public void Dado_uma_reserva_sem_conflito_retorna_false()
         {
             Assert.Fail();
         }

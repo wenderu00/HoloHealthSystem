@@ -25,7 +25,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_endereco_diferente_Count_acrescemta_1()
+        public void Dado_um_endereco_diferente_adiciona()
         {
             var count = _city.Addresss.Count;
             _city.AddAddress(_address);
@@ -33,7 +33,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_endereco_igual_count_permanece_igual()
+        public void Dado_um_endereco_igual_nao_adiciona()
         {
             
             _city.AddAddress(_address);

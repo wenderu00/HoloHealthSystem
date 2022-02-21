@@ -82,13 +82,20 @@ namespace HoloHealthSystem.Domain.Tests.Entities
 
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_um_numero_remove_o_numero()
+        public void Dado_um_numero_incluso_remove_o_numero()
         {
             
             _clinic.AddPhone(_validPhone);
             var count = _clinic.Phones.Count;
             _clinic.RemovePhone(_validPhone);
             Assert.AreEqual(count-1, _clinic.Phones.Count);
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_um_numero_nao_incluso_nao_remove_o_numero()
+        {
+
+            Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
@@ -117,7 +124,14 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_sala_diferente_adiciona()
+        public void Dado_uma_sala_com_conflito_de_numero_nao_adiciona()
+        {
+
+            Assert.Fail();
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_uma_sala_diferente_e_numero_sem_conflito_adiciona()
         {
             var count = _clinic.Rooms.Count;
             _clinic.AddRoom(_room);
@@ -132,6 +146,18 @@ namespace HoloHealthSystem.Domain.Tests.Entities
             var count = _clinic.Managers.Count;
             _clinic.AddManager(_manager);
             Assert.AreEqual(count, _clinic.Managers.Count);
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_um_gerente_incluso_remove()
+        {
+            Assert.Fail();
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_um_gerente_nao_incluso_nao_remove()
+        {
+            Assert.Fail();
         }
         [TestMethod]
         [TestCategory("Entities")]
@@ -157,6 +183,18 @@ namespace HoloHealthSystem.Domain.Tests.Entities
             var count = _clinic.Doctors.Count;
             _clinic.AddDoctor(_doctor);
             Assert.AreEqual(count + 1, _clinic.Doctors.Count);
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_um_medico_incluso_remove()
+        {
+            Assert.Fail();
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_um_medico_nao_incluso_nao_remove()
+        {
+            Assert.Fail();
         }
     }
 }

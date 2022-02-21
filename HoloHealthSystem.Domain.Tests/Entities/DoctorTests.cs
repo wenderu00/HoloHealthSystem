@@ -8,20 +8,8 @@ using System.Threading.Tasks;
 namespace HoloHealthSystem.Domain.Tests.Entities
 {
     [TestClass]
-    public class RoomTests
+    public class DoctorTests
     {
-        [TestMethod]
-        [TestCategory("Entities")]
-        public void Dado_um_novo_numero_sem_conflito_muda_numero()
-        {
-            Assert.Fail();
-        }
-        [TestMethod]
-        [TestCategory("Entities")]
-        public void Dado_um_novo_numero_com_conflito_nao_muda_numero()
-        {
-            Assert.Fail();
-        }
         [TestMethod]
         [TestCategory("Entities")]
         public void Dado_uma_reserva_sem_conflito_de_horario_retorna_false()
@@ -36,7 +24,25 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_com_conflito_de_horario_nao_adiciona()
+        public void Dado_uma_clinica_repetida_nao_adiciona()
+        {
+            Assert.Fail();
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_uma_clinica_diferente_adiciona()
+        {
+            Assert.Fail();
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_uma_clinica_inclusa_remove()
+        {
+            Assert.Fail();
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_uma_clinica_nao_inclusa_nao_remove()
         {
             Assert.Fail();
         }
@@ -48,14 +54,25 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Dado_uma_reserva_nova_e_sem_conflito_de_horario_adiciona()
+        public void Dado_uma_reserva_com_conflito_nao_adiciona()
         {
             Assert.Fail();
         }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Dado_uma_reserva_diferente_e_sem_conflito_adiciona()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        [TestCategory("Entities")]
         public void Dado_uma_reserva_inclusa_remove()
         {
             Assert.Fail();
         }
+        [TestMethod]
+        [TestCategory("Entities")]
         public void Dado_uma_reserva_nao_inclusa_nao_remove()
         {
             Assert.Fail();
