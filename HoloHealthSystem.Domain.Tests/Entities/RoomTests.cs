@@ -52,10 +52,14 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         {
             Assert.Fail();
         }
+        [TestMethod]
+        [TestCategory("Entities")]
         public void Should_remove_an_existing_reservation()
         {
             Assert.Fail();
         }
+        [TestMethod]
+        [TestCategory("Entities")]
         public void Should_not_remove_a_non_existing_reservation()
         {
             Assert.Fail();

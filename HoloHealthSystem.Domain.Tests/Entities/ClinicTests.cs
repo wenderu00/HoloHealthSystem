@@ -41,7 +41,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         [TestMethod]
         [TestCategory("Entities")]
         public void Should_add_a_address_when_a_related_address_is_given()
-            _
+            
         {
             _clinic.AddAddress(_address);
             Assert.AreEqual(_address, _clinic.Address);
@@ -56,7 +56,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Should_not_add_a_phone-number_when_a_invalid_phone-number_is_given()
+        public void Should_not_add_a_phone_number_when_a_invalid_phone_number_is_given()
         {
             var count = _clinic.Phones.Count;
             _clinic.AddPhone(_invalidPhone);
@@ -65,7 +65,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Should_not_add_an_existing_phone-number()
+        public void Should_not_add_an_existing_phone_number()
         {
             _clinic.AddPhone(_validPhone);
             var count = _clinic.Phones.Count;
@@ -74,7 +74,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Should_add_a_valid_phone-number()
+        public void Should_add_a_valid_phone_number()
         {
             var count = _clinic.Phones.Count;
             _clinic.AddPhone(_validPhone);
@@ -83,7 +83,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
 
         [TestMethod]
         [TestCategory("Entities")]
-        public void Should_remove_a_registered_phone-number()
+        public void Should_remove_a_registered_phone_number()
         {
             
             _clinic.AddPhone(_validPhone);
@@ -93,7 +93,7 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Should_not_remove_an_unregistered_phone-number()
+        public void Should_not_remove_an_unregistered_phone_number()
         {
 
             Assert.Fail();
