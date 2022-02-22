@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HoloHealthSystem.Domain.Entities
 {
-    public class Entity : IEquatable<Entity>
+    public abstract class Entity : Notifiable<Notification>, IEquatable<Entity>
     {
         public Entity()
         {
