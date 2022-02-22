@@ -22,7 +22,8 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         private readonly Reservation _reservation4;
         private readonly Apointment _validApoint;
         private readonly Apointment _invalidApoint;
-
+        private readonly Apointment _validApointWithConflict;
+        private readonly Apointment _validApointConflictless;
         public ReservationTests()
         {
             _clinic = new Clinic("Rua da hora");
@@ -32,6 +33,13 @@ namespace HoloHealthSystem.Domain.Tests.Entities
             _reservation2 = new Reservation(_room, _doctor, DateTime.Now.AddMinutes(4), DateTime.Now.AddMinutes(6));
             _reservation3 = new Reservation(_room, _doctor, DateTime.Now.AddMinutes(1), DateTime.Now.AddMinutes(7));
             _reservation4 = new Reservation(_room, _doctor, DateTime.Now.AddMinutes(6), DateTime.Now.AddMinutes(7));
+            _pacient = new Pacient(new Email("facil@gmail.com"), new Name("Márcio", "Wendell"), DateTime.Now, new CPF("62318902364"));
+            _validApoint = new Apointment(_pacient, _reservation, DateTime.Now.AddMinutes(3));
+            _validApointWithConflict = new Apointment(_pacient, _reservation, DateTime.Now.AddMinutes(3));
+            _invalidApoint = new Apointment(_pacient, _reservation, DateTime.Now);
+            _validApointConflictless = new Apointment(_pacient, _reservation, DateTime.Now.AddMinutes(4));
+
+
         }
         [TestMethod]
         [TestCategory("Entities")]
@@ -94,61 +102,85 @@ namespace HoloHealthSystem.Domain.Tests.Entities
         [TestCategory("Entities")]
         public void Should_return_true_for_a_valid_apointment()
         {
-            Assert.Fail();
+            bool result = _reservation.ValidApointment(_validApoint);
+            Assert.IsTrue(result);
         }
         [TestMethod]
         [TestCategory("Entities")]
         public void Should_return_false_for_a_invalid_apointment()
         {
-            Assert.Fail();
+            bool result = _reservation.ValidApointment(_invalidApoint);
+            Assert.IsFalse(result);
         }
         [TestMethod]
         [TestCategory("Entities")]
         public void Should_return_true_for_a_conflict_apointment()
         {
-            Assert.Fail();
+            _reservation.AddApointment(_validApoint);
+            bool result = _reservation.HasConflictApointment(_validApointWithConflict);
+            Assert.IsTrue(result);
+           
         }
         [TestMethod]
         [TestCategory("Entities")]
-        public void Should_return_true_for_a_conflictless_apointment()
+        public void Should_return_false_for_a_conflictless_apointment()
         {
-            Assert.Fail();
+            _reservation.AddApointment(_validApoint);
+            bool result = _reservation.HasConflictApointment(_validApointConflictless);
+            Assert.IsFalse(result);
         }
         [TestMethod]
         [TestCategory("Entities")]
         public void Should_not_add_a_invalid_apointment()
         {
-            Assert.Fail();
+            var count = _reservation.Apoints.Count;
+            _reservation.AddApointment(_invalidApoint);
+            Assert.AreEqual(count, _reservation.Apoints.Count);
         }
         [TestMethod]
         [TestCategory("Entities")]
         public void Should_not_add_a_registered_apointment()
         {
-            Assert.Fail();
+            
+            _reservation.AddApointment(_validApoint);
+            var count = _reservation.Apoints.Count;
+            _reservation.AddApointment(_validApoint);
+            Assert.AreEqual(count, _reservation.Apoints.Count);
         }
         [TestMethod]
         [TestCategory("Entities")]
         public void Should_not_add_a_conflict_apointment()
         {
-            Assert.Fail();
+            _reservation.AddApointment(_validApoint);
+            var count = _reservation.Apoints.Count;
+            _reservation.AddApointment(_validApointWithConflict);
+            Assert.AreEqual(count, _reservation.Apoints.Count);
         }
         [TestMethod]
         [TestCategory("Entities")]
         public void Should_add_new_valid_apointment_that_do_not_has_any_conflicts()
         {
-            Assert.Fail();
+            var count = _reservation.Apoints.Count;
+            _reservation.AddApointment(_validApoint);
+            Assert.AreEqual(count+1, _reservation.Apoints.Count);
         }
         [TestMethod]
         [TestCategory("Entities")]
         public void Should_remove_a_registered_apointment()
         {
-            Assert.Fail();
+            _reservation.AddApointment(_validApoint);
+            var count = _reservation.Apoints.Count;
+            _reservation.RemoveApointment(_validApoint);
+            Assert.AreEqual(count - 1, _reservation.Apoints.Count);
         }
         [TestMethod]
         [TestCategory("Entities")]
         public void Should_not_remove_an_unregistered_apointment()
         {
-            Assert.Fail();
+            _reservation.AddApointment(_validApoint);
+            var count = _reservation.Apoints.Count;
+            _reservation.RemoveApointment(_validApointConflictless);
+            Assert.AreEqual(count, _reservation.Apoints.Count);
         }
     }
 }

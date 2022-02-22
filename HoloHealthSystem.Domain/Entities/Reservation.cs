@@ -58,7 +58,7 @@ namespace HoloHealthSystem.Domain.Entities
                 _apoints.Add(apoint);
             }
         }
-        public void Remove(Apointment apoint)
+        public void RemoveApointment(Apointment apoint)
         {
             _apoints.Remove(apoint);
         }
