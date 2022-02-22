@@ -45,7 +45,7 @@ namespace HoloHealthSystem.Domain.Entities
         }
         public void AddReservation(Reservation reservation)
         {
-            if(_reservations.Contains(reservation) &&!HasConflictReservation(reservation)) _reservations.Add(reservation);
+            if(!_reservations.Contains(reservation) &&!HasConflictReservation(reservation)) _reservations.Add(reservation);
         }
         public void RemoveReservation(Reservation reservation)
         {
