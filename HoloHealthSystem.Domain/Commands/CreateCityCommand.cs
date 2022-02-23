@@ -13,13 +13,13 @@ namespace HoloHealthSystem.Domain.Commands.CityCommands
     public class CreateCityCommand : Notifiable<Notification>,ICommand
     {
         public CreateCityCommand() { }
-        public CreateCityCommand(State state,string name)
+        public CreateCityCommand(Guid state,string name)
         {
             State = state;
             Name = name;
         }
 
-        public State? State { get; set; }
+        public Guid? State { get; set; }
         public string? Name { get; set; }
 
         public void Validate()
@@ -28,7 +28,6 @@ namespace HoloHealthSystem.Domain.Commands.CityCommands
                 new Contract<bool>()
                 .Requires()
                 .IsNotNull(State, "É necessário o estado")
-                .IsTrue(State!=null? State.IsValid : false,"Estado inválido")
                 .IsNotNull(Name, "Nome da cidade é necessária")
                 .IsGreaterThan(Name, 3, "O nome é muito pequeno")
                 );
