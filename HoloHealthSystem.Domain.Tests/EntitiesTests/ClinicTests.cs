@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HoloHealthSystem.Domain.Tests.Entities
+namespace HoloHealthSystem.Domain.Tests.EntitiesTests
 {
     [TestClass]
     public class ClinicTests
@@ -40,8 +40,8 @@ namespace HoloHealthSystem.Domain.Tests.Entities
             _invalidPhone = new Phone("");
             _room = new Room("203", _clinic);
             _roomSameNumber = new Room("203", _clinic);
-            _manager = new Manager(_clinic, new Email("facil@gmail.com"), new Name("Márcio", "Wendell"), DateTime.Now, new CPF("62318902364"));
-            _manager2 = new Manager(_clinic, new Email("facil@gmail.com"), new Name("Márcio", "Wendell"), DateTime.Now, new CPF("62318902365"));
+            _manager = new Manager( new Email("facil@gmail.com"), new Name("Márcio", "Wendell"), DateTime.Now, new CPF("62318902364"));
+            _manager2 = new Manager( new Email("facil@gmail.com"), new Name("Márcio", "Wendell"), DateTime.Now, new CPF("62318902365"));
             _doctor = new Doctor("12345678", 0, new Email("facil@gmail.com"), new Name("Márcio", "Wendell"), DateTime.Now, new CPF("62318902364"));
             _doctor2 = new Doctor("12345678", 0, new Email("facil@gmail.com"), new Name("Márcio", "Wendell"), DateTime.Now, new CPF("62318902365"));
         }

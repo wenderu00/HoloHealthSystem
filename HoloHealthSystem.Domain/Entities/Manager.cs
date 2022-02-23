@@ -9,15 +9,18 @@ namespace HoloHealthSystem.Domain.Entities
 {
     public class Manager : User
     {
-        public Manager(Clinic clinic,Email email, Name name, DateTime birth, CPF cpf) : base(email, name, birth, cpf)
+        public Manager(Email email, Name name, DateTime birth, CPF cpf) : base(email, name, birth, cpf)
         {
-            Clinic = clinic;
         }
-        public Clinic Clinic { get; private set; }
+        public Clinic? Clinic { get; private set; }
 
         public void ChangeClinic(Clinic clinic)
         {
-            if(Clinic.Managers.Count > 1) {
+            if(Clinic == null)
+            {
+                Clinic = clinic;
+            }
+            else if(Clinic.Managers.Count > 1) {
                 Clinic = clinic;
             }
         }

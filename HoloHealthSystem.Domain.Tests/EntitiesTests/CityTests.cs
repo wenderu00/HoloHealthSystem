@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HoloHealthSystem.Domain.Tests.Entities
+namespace HoloHealthSystem.Domain.Tests.EntitiesTests
 {
     [TestClass]
     public class CityTests

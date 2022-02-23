@@ -19,7 +19,7 @@ namespace HoloHealthSystem.Domain.Commands.CityCommands
             Name = name;
         }
 
-        public Guid? State { get; set; }
+        public Guid State { get; set; }
         public string? Name { get; set; }
 
         public void Validate()
