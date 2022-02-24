@@ -12,13 +12,12 @@ namespace HoloHealthSystem.Domain.Tests.Repositories
     {
         public void Create(City city)
         {
-            throw new NotImplementedException();
+            
         }
 
-       
-        public City GetById(Guid? id)
+        public City GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return new City(new State("Pernambuco"),"Recife");
         }
     }
 }

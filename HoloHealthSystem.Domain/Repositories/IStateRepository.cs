@@ -10,6 +10,6 @@ namespace HoloHealthSystem.Domain.Repositories
     public interface IStateRepository
     {
         void Create(State state);
-        State? GetByID(Guid? id);
+        State GetByID(Guid id);
     }
 }

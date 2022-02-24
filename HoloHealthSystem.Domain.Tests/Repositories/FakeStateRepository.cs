@@ -16,9 +16,9 @@ namespace HoloHealthSystem.Domain.Tests.Repositories
         }
 
 
-        public State? GetByID(Guid? id)
+        public State GetByID(Guid id)
         {
-            throw new NotImplementedException();
+            return new State("Pernambuco");
         }
     }
 }
