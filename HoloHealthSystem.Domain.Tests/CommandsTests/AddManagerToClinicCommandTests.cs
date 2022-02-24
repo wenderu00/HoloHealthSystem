@@ -1,6 +1,4 @@
-﻿using HoloHealthSystem.Domain.Commands;
-using HoloHealthSystem.Domain.Commands.CityCommands;
-using HoloHealthSystem.Domain.Commands.ClinicCommands;
+﻿using HoloHealthSystem.Domain.Commands.ClinicCommands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -11,11 +9,11 @@ using System.Threading.Tasks;
 namespace HoloHealthSystem.Domain.Tests.CommandsTests
 {
     [TestClass]
-    public class CreateClinicCommandTests
+    public class AddManagerToClinicCommandTests
     {
-        private readonly CreateClinicCommand _invalidCommand = new CreateClinicCommand();
-        private readonly CreateClinicCommand _validCommand = new CreateClinicCommand("rua da hora","graças","rua da hora","202",Guid.NewGuid());
-        public CreateClinicCommandTests()
+        private readonly AddManagerToClinicCommand _invalidCommand = new AddManagerToClinicCommand();
+        private readonly AddManagerToClinicCommand _validCommand = new AddManagerToClinicCommand(Guid.NewGuid(),Guid.NewGuid());
+        public AddManagerToClinicCommandTests()
         {
             _invalidCommand.Validate();
             _validCommand.Validate();

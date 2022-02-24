@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HoloHealthSystem.Domain.Commands
+namespace HoloHealthSystem.Domain.Commands.ClinicCommands
 {
     public class CreateClinicCommand : Notifiable<Notification>, ICommand
     {
