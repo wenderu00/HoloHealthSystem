@@ -1,6 +1,7 @@
 ﻿using Flunt.Notifications;
 using Flunt.Validations;
 using HoloHealthSystem.Domain.Commands.Contracts;
+using HoloHealthSystem.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +13,30 @@ namespace HoloHealthSystem.Domain.Commands.ClinicCommands
     public class RemovePhoneOfClinicCommand : Notifiable<Notification>, ICommand
     {
         public RemovePhoneOfClinicCommand() { }
+        
         public RemovePhoneOfClinicCommand(string phone, Guid clinic)
         {
-            Phone = phone;
+            Phone = new Phone(phone);
             Clinic = clinic;
         }
 
-        public string? Phone { get; set; }
+        public Phone? Phone { get; set; }
         public Guid Clinic { get; set; }
         public void Validate()
         {
-            AddNotifications(new Contract<bool>()
-                .IsNotNullOrEmpty(Phone, "Telefone inválido")
-                .AreNotEquals(Clinic, Guid.Empty, "clinica inválida"));
+            if (Phone == null)
+            {
+                AddNotifications(new Contract<bool>()
+                .AreNotEquals(Clinic, Guid.Empty, "clinica inválida")
+                .IsNotNull(Phone, "Telefone inválido"));
+            }
+            else
+            {
+                AddNotifications(new Contract<bool>()
+                .AreNotEquals(Clinic, Guid.Empty, "clinica inválida")
+                .IsNotNull(Phone, "Telefone inválido"), Phone);
+            }
+
         }
     }
 }

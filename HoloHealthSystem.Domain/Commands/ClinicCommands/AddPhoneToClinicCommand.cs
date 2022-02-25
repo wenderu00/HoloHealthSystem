@@ -19,12 +19,23 @@ namespace HoloHealthSystem.Domain.Commands.ClinicCommands
             Clinic = clinic;
         }
 
-        public Phone Phone { get; set; }
+        public Phone? Phone { get; set; }
         public Guid Clinic { get; set; }
         public void Validate()
         {
-            AddNotifications(new Contract<bool>()
-                .AreNotEquals(Clinic, Guid.Empty, "clinica inválida"),Phone);
+            if (Phone == null)
+            {
+                AddNotifications(new Contract<bool>()
+                .AreNotEquals(Clinic, Guid.Empty, "clinica inválida")
+                .IsNotNull(Phone, "Telefone inválido"));
+            }
+            else
+            {
+                AddNotifications(new Contract<bool>()
+                .AreNotEquals(Clinic, Guid.Empty, "clinica inválida")
+                .IsNotNull(Phone, "Telefone inválido"),Phone);
+            }
+            
         }
     }
 }

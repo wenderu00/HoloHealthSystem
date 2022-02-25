@@ -51,8 +51,10 @@ namespace HoloHealthSystem.Domain.Tests.EntitiesTests
         public void Should_add_a_address_when_a_related_address_is_given()
             
         {
+            
             _clinic.AddAddress(_address);
             Assert.AreEqual(_address, _clinic.Address);
+           
         }
         [TestMethod]
         [TestCategory("Entities")]

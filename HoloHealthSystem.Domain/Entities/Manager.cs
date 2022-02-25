@@ -24,6 +24,13 @@ namespace HoloHealthSystem.Domain.Entities
                 Clinic = clinic;
             }
         }
+        public void RemoveClinic(Clinic clinic)
+        {
+            if (Clinic != null && Clinic == clinic)
+            {
+                Clinic = null;
+            }
+        }
     }
 
 }

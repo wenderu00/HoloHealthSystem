@@ -20,5 +20,10 @@ namespace HoloHealthSystem.Domain.Tests.Repositories
         {
             return new State("Pernambuco");
         }
+
+        public void Update(State state)
+        {
+            
+        }
     }
 }

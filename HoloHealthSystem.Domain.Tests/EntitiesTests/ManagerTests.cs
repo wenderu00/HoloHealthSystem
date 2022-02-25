@@ -54,5 +54,30 @@ namespace HoloHealthSystem.Domain.Tests.EntitiesTests
             _manager.ChangeClinic(_clinic2);
             Assert.AreEqual(clinic, _manager.Clinic);
         }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Should_not_remove_clinic_when_manager_clinic_is_null()
+        {
+            var clinic = _manager.Clinic;
+            _manager.RemoveClinic(_clinic);
+            Assert.AreEqual(clinic, _manager.Clinic);
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Should_not_remove_clinic_when_manager_clinic_are_not_equal()
+        {
+            _manager.ChangeClinic(_clinic2);
+            var clinic = _manager.Clinic;
+            _manager.RemoveClinic(_clinic);
+            Assert.AreEqual(clinic, _manager.Clinic);
+        }
+        [TestMethod]
+        [TestCategory("Entities")]
+        public void Should_remove_clinic_when_manager_clinic_are_equal()
+        {
+            _manager.ChangeClinic(_clinic);
+            _manager.RemoveClinic(_clinic);
+            Assert.AreEqual(null, _manager.Clinic);
+        }
     }
 }

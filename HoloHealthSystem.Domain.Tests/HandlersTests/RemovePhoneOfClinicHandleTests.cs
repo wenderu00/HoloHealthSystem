@@ -12,12 +12,13 @@ using System.Threading.Tasks;
 namespace HoloHealthSystem.Domain.Tests.HandlersTests
 {
     [TestClass]
-    public class CreateClinicHandlerTests
+    public class RemovePhoneOfClinicHandleTests
     {
-        private readonly CreateClinicCommand _invalidCommand = new CreateClinicCommand();
-        private readonly CreateClinicCommand _validCommand = new CreateClinicCommand("rua da hora", "graças", "rua da hora", "202", Guid.NewGuid());
-        private readonly ClinicHandler _handler = new ClinicHandler(new FakeClinicRepository(), new FakeAddressRepository(), new FakeCityRepository(),new FakeManagerRepository());
+        private readonly RemovePhoneOfClinicCommand _invalidCommand = new RemovePhoneOfClinicCommand();
+        private readonly RemovePhoneOfClinicCommand _validCommand = new RemovePhoneOfClinicCommand("81979001125", Guid.NewGuid());
+        private readonly ClinicHandler _handler = new ClinicHandler(new FakeClinicRepository(), new FakeAddressRepository(), new FakeCityRepository(), new FakeManagerRepository());
         private GenericCommandResult _result = new GenericCommandResult();
+
         [TestMethod]
         [TestCategory("Handlers")]
         public void Should_stop_execution_when_command_is_invalid()
@@ -27,7 +28,7 @@ namespace HoloHealthSystem.Domain.Tests.HandlersTests
         }
         [TestMethod]
         [TestCategory("Handlers")]
-        public void Should_create_clinic_when_command_is_valid()
+        public void Should_add_phone_when_command_is_valid()
         {
             _result = (GenericCommandResult)_handler.Handle(_validCommand);
             Assert.IsTrue(_result.Success);

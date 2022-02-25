@@ -16,7 +16,7 @@ namespace HoloHealthSystem.Domain.Tests.HandlersTests
     {
         private readonly AddPhoneToClinicCommand _invalidCommand = new AddPhoneToClinicCommand();
         private readonly AddPhoneToClinicCommand _validCommand = new AddPhoneToClinicCommand("81979001125", Guid.NewGuid());
-        private readonly ClinicHandler _handler = new ClinicHandler(new FakeClinicRepository(), new FakeAddressRepository(), new FakeCityRepository());
+        private readonly ClinicHandler _handler = new ClinicHandler(new FakeClinicRepository(), new FakeAddressRepository(), new FakeCityRepository(), new FakeManagerRepository());
         private GenericCommandResult _result = new GenericCommandResult();
         [TestMethod]
         [TestCategory("Handlers")]

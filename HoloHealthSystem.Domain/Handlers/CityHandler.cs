@@ -28,7 +28,10 @@ namespace HoloHealthSystem.Domain.Handlers
             var state = _stateRepository.GetByID(command.State);
             if(state == null)
                 return new GenericCommandResult(false, "O estado não existe", command.State);
+            
             var city = new City(state, "recife");
+            state.AddCity(city);
+            _stateRepository.Update(state);
             _cityRepository.Create(city);
             return new GenericCommandResult(true, "Cidade criada com sucesso", city);
         }

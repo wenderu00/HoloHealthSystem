@@ -10,6 +10,7 @@ namespace HoloHealthSystem.Domain.Repositories
     public interface ICityRepository
     {
         void Create(City city);
+        void Update(City city);
         City GetById(Guid id);
     }
 }
