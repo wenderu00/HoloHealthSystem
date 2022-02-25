@@ -1,4 +1,6 @@
-﻿using HoloHealthSystem.Domain.Commands.ClinicCommands;
+﻿using HoloHealthSystem.Domain.Commands.CityCommands;
+using HoloHealthSystem.Domain.Commands.StateCommands;
+using HoloHealthSystem.Domain.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -6,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HoloHealthSystem.Domain.Tests.CommandsTests
+namespace HoloHealthSystem.Domain.Tests.CommandsTests.CityCommandsTests
 {
     [TestClass]
-    public class AddPhoneToClinicCommandTests 
+    public class CreateCityCommandTests
     {
-        private readonly AddPhoneToClinicCommand _invalidCommand = new AddPhoneToClinicCommand();
-        private readonly AddPhoneToClinicCommand _validCommand = new AddPhoneToClinicCommand("81979001125", Guid.NewGuid());
-        public AddPhoneToClinicCommandTests()
+        private readonly CreateCityCommand _invalidCommand = new CreateCityCommand();
+        private readonly CreateCityCommand _validCommand = new CreateCityCommand(Guid.NewGuid(),"Recife");
+        public CreateCityCommandTests()
         {
             _invalidCommand.Validate();
             _validCommand.Validate();

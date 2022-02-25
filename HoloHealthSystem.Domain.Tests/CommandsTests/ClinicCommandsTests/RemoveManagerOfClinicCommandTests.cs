@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HoloHealthSystem.Domain.Tests.CommandsTests
+namespace HoloHealthSystem.Domain.Tests.CommandsTests.ClinicCommandsTests
 {
     [TestClass]
-    public class AddManagerToClinicCommandTests
+    public class RemoveManagerOfClinicCommandTests
     {
-        private readonly AddManagerToClinicCommand _invalidCommand = new AddManagerToClinicCommand();
-        private readonly AddManagerToClinicCommand _validCommand = new AddManagerToClinicCommand(Guid.NewGuid(),Guid.NewGuid());
-        public AddManagerToClinicCommandTests()
+        private readonly RemoveManagerOfClinicCommand _invalidCommand = new RemoveManagerOfClinicCommand();
+        private readonly RemoveManagerOfClinicCommand _validCommand = new RemoveManagerOfClinicCommand(Guid.NewGuid(),Guid.NewGuid());
+        public RemoveManagerOfClinicCommandTests()
         {
             _invalidCommand.Validate();
             _validCommand.Validate();
