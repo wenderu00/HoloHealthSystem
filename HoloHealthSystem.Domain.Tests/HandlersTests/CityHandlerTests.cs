@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace HoloHealthSystem.Domain.Tests.HandlersTests
 {
     [TestClass]
-    public class CreateCityHandlersTests
+    public class CityHandlerTests
     {
         private readonly CreateCityCommand _invalidCommand = new CreateCityCommand();
         private readonly CreateCityCommand _validCommand = new CreateCityCommand(Guid.NewGuid(), "Recife");

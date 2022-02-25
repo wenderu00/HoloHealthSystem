@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace HoloHealthSystem.Domain.Tests.HandlersTests
 {
     [TestClass]
-    public class CreateStateHandlerTests
+    public class StateHandlerTests
     {
         private readonly CreateStateCommand _invalidCommand = new CreateStateCommand();
         private readonly CreateStateCommand _validCommand = new CreateStateCommand("Pernambuco");
