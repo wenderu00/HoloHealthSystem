@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Flunt.Notifications;
+using HoloHealthSystem.Domain.Commands.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,9 @@ namespace HoloHealthSystem.Domain.Commands.ReservationCommands
 {
     public class RemoveReservationCommand : Notifiable<Notification>, ICommand
     {
+        public void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
