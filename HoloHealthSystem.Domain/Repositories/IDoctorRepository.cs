@@ -11,6 +11,6 @@ namespace HoloHealthSystem.Domain.Repositories
     {
         void Create(Doctor doctor);
         void Update(Doctor doctor);
-        void GetById(Guid doctor);
+        Doctor GetById(Guid doctor);
     }
 }

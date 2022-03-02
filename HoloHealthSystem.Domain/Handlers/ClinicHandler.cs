@@ -45,6 +45,7 @@ namespace HoloHealthSystem.Domain.Handlers
             var address = new Address(command.District, command.Street, command.Number, city, clinic);
             city.AddAddress(address);
             clinic.AddAddress(address);
+            _cityRepository.Update(city);
             _clinicRepository.Create(clinic);
             _addressRepository.Create(address);
             return new GenericCommandResult(true, "Clinica criada com sucesso", clinic);

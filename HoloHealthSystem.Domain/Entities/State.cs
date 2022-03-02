@@ -24,5 +24,6 @@ namespace HoloHealthSystem.Domain.Entities
                 _cities.Add(city);
             }
         }
+       
     }
 }
