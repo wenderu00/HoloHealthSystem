@@ -16,7 +16,7 @@ namespace HoloHealthSystem.Domain.Tests.Repositories
             
         }
 
-        public Doctor GetById(Guid doctor)
+        public Doctor GetById(string crm)
         {
             return new Doctor("12345678",0,new Email("mwmcjr@gmail.com"), new Name("marcio", "wendell"), DateTime.Now, new CPF("62318902364"));
         }

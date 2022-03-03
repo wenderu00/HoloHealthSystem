@@ -12,7 +12,7 @@ namespace HoloHealthSystem.Domain.Tests.CommandsTests.DoctorCommandsTests
     public class AddClinicToDoctorCommandTests
     {
         private readonly AddClinicToDoctorCommand _invalidAddClinicToDoctorCommand = new AddClinicToDoctorCommand();
-        private readonly AddClinicToDoctorCommand _validAddClinicToDoctorCommand = new AddClinicToDoctorCommand(Guid.NewGuid(), Guid.NewGuid());
+        private readonly AddClinicToDoctorCommand _validAddClinicToDoctorCommand = new AddClinicToDoctorCommand(Guid.NewGuid(),"12345678");
 
         public AddClinicToDoctorCommandTests()
         {
@@ -23,7 +23,7 @@ namespace HoloHealthSystem.Domain.Tests.CommandsTests.DoctorCommandsTests
         [TestCategory("commands")]
         public void Should_command_is_valid_is_false_when_invalid_command_is_given()
         {
-
+            
             Assert.IsFalse(_invalidAddClinicToDoctorCommand.IsValid);
         }
         [TestMethod]

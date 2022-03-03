@@ -17,9 +17,9 @@ namespace HoloHealthSystem.Domain.Tests.HandlersTests
         private readonly CreateDoctorCommand _invalidCreateDoctorCommand = new CreateDoctorCommand();
         private readonly CreateDoctorCommand _validCreateDoctorCommand = new CreateDoctorCommand("12345678", 0, "mwmcjr@gmail.com", "márcio", "wendell", DateTime.Now, "62318902364");
         private readonly AddClinicToDoctorCommand _invalidAddClinicToDoctorCommand = new AddClinicToDoctorCommand();
-        private readonly AddClinicToDoctorCommand _validAddClinicToDoctorCommand = new AddClinicToDoctorCommand(Guid.NewGuid(), Guid.NewGuid());
+        private readonly AddClinicToDoctorCommand _validAddClinicToDoctorCommand = new AddClinicToDoctorCommand(Guid.NewGuid(), "12345678");
         private readonly RemoveClinicOfDoctorCommand _invalidRemoveClinicOfDoctorCommand = new RemoveClinicOfDoctorCommand();
-        private readonly RemoveClinicOfDoctorCommand _validRemoveClinicOfDoctorCommand = new RemoveClinicOfDoctorCommand(Guid.NewGuid(), Guid.NewGuid());
+        private readonly RemoveClinicOfDoctorCommand _validRemoveClinicOfDoctorCommand = new RemoveClinicOfDoctorCommand(Guid.NewGuid(), "12345678");
         private readonly DoctorHandler _handler = new DoctorHandler(new FakeDoctorRepository(), new FakeClinicRepository());
         private GenericCommandResult _result = new GenericCommandResult();
         [TestMethod]

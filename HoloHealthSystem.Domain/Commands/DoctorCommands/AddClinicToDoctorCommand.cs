@@ -12,18 +12,19 @@ namespace HoloHealthSystem.Domain.Commands.DoctorCommands
     public class AddClinicToDoctorCommand : Notifiable<Notification>, ICommand
     {
         public AddClinicToDoctorCommand() { }
-        public AddClinicToDoctorCommand(Guid clinic,Guid doctor)
+        public AddClinicToDoctorCommand(Guid clinic,string doctor)
         {
             Clinic = clinic;
             Doctor = doctor;
         }
         public Guid Clinic { get; set; }
-        public Guid Doctor { get; set; }
+        public string? Doctor { get; set; }
         public void Validate()
         {
             AddNotifications(new Contract<bool>()
                 .AreNotEquals(Guid.Empty, Clinic, "clinica inválida")
-                .AreNotEquals(Guid.Empty, Doctor, "médico inválido"));
+                
+                );
         }
     }
 }

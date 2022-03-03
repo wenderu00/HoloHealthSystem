@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace HoloHealthSystem.Domain.Repositories
 {
-    public interface IDoctorRepository
+    public interface IReservationRepository
     {
-        void Create(Doctor doctor);
-        void Update(Doctor doctor);
-        Doctor GetById(string crm);
+        void Create(Reservation reservation);
+        void Update(Reservation reservation);
+        void Delete(Reservation reservation);
+        Reservation GetByID(Guid id);
     }
 }

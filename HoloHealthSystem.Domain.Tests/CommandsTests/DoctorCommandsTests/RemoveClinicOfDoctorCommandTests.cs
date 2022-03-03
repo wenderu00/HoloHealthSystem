@@ -12,7 +12,7 @@ namespace HoloHealthSystem.Domain.Tests.CommandsTests.DoctorCommandsTests
     public class RemoveClinicOfDoctorCommandTests
     {
         private readonly RemoveClinicOfDoctorCommand _invalidRemoveClinicOfDoctorCommand = new RemoveClinicOfDoctorCommand();
-        private readonly RemoveClinicOfDoctorCommand _validRemoveClinicOfDoctorCommand = new RemoveClinicOfDoctorCommand(Guid.NewGuid(),Guid.NewGuid());
+        private readonly RemoveClinicOfDoctorCommand _validRemoveClinicOfDoctorCommand = new RemoveClinicOfDoctorCommand(Guid.NewGuid(),"12345678");
 
         public RemoveClinicOfDoctorCommandTests()
         {
@@ -24,7 +24,7 @@ namespace HoloHealthSystem.Domain.Tests.CommandsTests.DoctorCommandsTests
         [TestCategory("commands")]
         public void Should_command_is_valid_is_false_when_invalid_command_is_given()
         {
-
+            
             Assert.IsFalse(_invalidRemoveClinicOfDoctorCommand.IsValid);
         }
         [TestMethod]
