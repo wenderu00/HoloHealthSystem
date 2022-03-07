@@ -26,10 +26,19 @@ namespace HoloHealthSystem.Domain.Commands.ReservationCommands
 
         public void Validate()
         {
-            AddNotifications(new Contract<bool>()
+            if (Doctor == null)
+            {
+                AddNotifications(new Contract<bool>()
                 .AreNotEquals(Room, Guid.Empty, "Sala inválida")
                 .IsNullOrEmpty(Doctor, "Médico inválido")
-                .IsGreaterThan(End,Begin,"Horário inválido"));
+                .IsGreaterThan(End, Begin, "Horário inválido"));
+            }
+            else
+            {
+                AddNotifications(new Contract<bool>()
+                .AreNotEquals(Room, Guid.Empty, "Sala inválida")
+                .IsGreaterThan(End, Begin, "Horário inválido"));
+            }
         }
     }
 }

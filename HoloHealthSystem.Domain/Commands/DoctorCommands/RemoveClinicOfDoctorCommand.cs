@@ -21,9 +21,17 @@ namespace HoloHealthSystem.Domain.Commands.DoctorCommands
         public string? Doctor { get; set; }
         public void Validate()
         {
-            AddNotifications(new Contract<bool>()
+            if (Doctor == null)
+            {
+                AddNotifications(new Contract<bool>()
                 .AreNotEquals(Guid.Empty, Clinic, "clinica inválida")
                 .IsNullOrEmpty(Doctor, "médico inválido"));
+            }
+            else
+            {
+                AddNotifications(new Contract<bool>()
+                .AreNotEquals(Guid.Empty, Clinic, "clinica inválida"));
+            }
         }
     }
 }

@@ -39,13 +39,15 @@ namespace HoloHealthSystem.Domain.Tests.HandlersTests
         [TestCategory("Handlers")]
         public void Should_stop_execution_when_invalid_remove_reservation_command_is_given()
         {
-            Assert.Fail();
+            _result = (GenericCommandResult)_handler.Handle(_invalidRemoveReservationCommand);
+            Assert.IsFalse(_result.Success);
         }
         [TestMethod]
         [TestCategory("Handlers")]
         public void Should_execute_command_when_valid_remove_reservation_command_is_given()
         {
-            Assert.Fail();
+            _result = (GenericCommandResult)_handler.Handle(_validRemoveReservationCommand);
+            Assert.IsTrue(_result.Success);
         }
     }
 }
