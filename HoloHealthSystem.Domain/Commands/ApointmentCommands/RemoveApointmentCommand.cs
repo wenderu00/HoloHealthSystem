@@ -1,4 +1,5 @@
 ﻿using Flunt.Notifications;
+using Flunt.Validations;
 using HoloHealthSystem.Domain.Commands.Contracts;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,15 @@ namespace HoloHealthSystem.Domain.Commands.ApointmentCommands
 {
     public class RemoveApointmentCommand : Notifiable<Notification>, ICommand
     {
+        public RemoveApointmentCommand() { }
+        public RemoveApointmentCommand(Guid apoint)
+        {
+            Apointment = apoint;
+        }
+        public Guid Apointment { get; set; }
         public void Validate()
         {
-            throw new NotImplementedException();
+            AddNotifications(new Contract<bool>().AreNotEquals(Guid.Empty, Apointment, "A consulta é necessária"));
         }
     }
 }
